@@ -45,6 +45,10 @@ public static class Parser_Test
         new Test_Unit("-(1)", "(negative 1)"),
         new Test_Unit("-2^(-8)", "(negative (^ 2 (negative 8)))"),
 
+        new Test_Unit("1*2*3*4", "(* (* (* 1 2) 3) 4)"),
+
+        new Test_Unit("1^9*2^8+3^7*4^6-5*6", "(- (+ (* (^ 1 9) (^ 2 8)) (* (^ 3 7) (^ 4 6))) (* 5 6))"),
+
 
     };
 
