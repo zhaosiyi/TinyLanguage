@@ -83,7 +83,26 @@ public class Parser
 
     private AST parse_expression()
     {
-        return parse_power();
+        return parse_multiply_divide();
+    }
+
+    // sub: parse_positive_negative
+    private AST parse_multiply_divide()
+    {
+        AST left_operand = parse_positive_negative();
+
+        while (next_token.is_operator() &&
+              (next_token.value == "*" || next_token.value == "/"))
+        {
+            AST @operator = new AST(read_token());
+            AST right_operand = parse_positive_negative();
+
+            @operator.child = left_operand;
+            left_operand.next = right_operand;
+            left_operand = @operator;
+        }
+
+        return left_operand;
     }
 
     // sub: parse_power

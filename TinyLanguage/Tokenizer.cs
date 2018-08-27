@@ -125,14 +125,7 @@ public class Tokenizer
             case '+': case '-': // 加减号或正负号
             {
                 append_char_to_builder();
-                if (is_digit(next_char))
-                {
-                    parse_number();
-                }
-                else
-                {
-                    token_type = Token_Type.Operator;
-                }
+                token_type = Token_Type.Operator;
             }
             break;
 

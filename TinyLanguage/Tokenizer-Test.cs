@@ -63,14 +63,10 @@ public static class Tokenizer_Test
 
         // Integer, Decimal
         new Test_Unit("0", new Token(1, 1, Token_Type.Integer, "0")),
-        new Test_Unit("+0", new Token(1, 1, Token_Type.Integer, "+0")),
-        new Test_Unit("-0", new Token(1, 1, Token_Type.Integer, "-0")),
         new Test_Unit("1", new Token(1, 1, Token_Type.Integer, "1")),
         new Test_Unit("2548705244", new Token(1, 1, Token_Type.Integer, "2548705244")),
 
         new Test_Unit("0.0", new Token(1, 1, Token_Type.Decimal, "0.0")),
-        new Test_Unit("+0.0", new Token(1, 1, Token_Type.Decimal, "+0.0")),
-        new Test_Unit("-0.0", new Token(1, 1, Token_Type.Decimal, "-0.0")),
         new Test_Unit("0.00001", new Token(1, 1, Token_Type.Decimal, "0.00001")),
         new Test_Unit("3.1415926535", new Token(1, 1, Token_Type.Decimal, "3.1415926535")),
 
