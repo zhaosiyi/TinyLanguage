@@ -80,10 +80,10 @@ public class Tokenizer
 
     public void load(TextReader input)
     {
-        reader = input;
+        reader    = input;
         next_char = reader.Read();
         next_next = reader.Read();
-        line = column = 1;
+        line      = column = 1;
         builder.Clear();
     }
 
