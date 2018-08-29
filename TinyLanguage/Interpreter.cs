@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-enum Value_Type : Byte
+public enum Value_Type : Byte
 {
     Integer,
     Decimal,
@@ -16,18 +16,18 @@ public class Typed_Value
     public Value_Type type;
     public dynamic value;
 
-    public Typed_Value(Value_Type t, dynamic v)
+    public Typed_Value(Value_Type type, dynamic value)
     {
-        this.type = t;
-        this.value = v;
+        this.type = type;
+        this.value = value;
     }
 }
 
 public class Interpreter
 {
-    private Stack<Typed_Value> eval_stack; // evaluation stack 求值栈
+    // private Stack<Typed_Value> eval_stack; // evaluation stack 求值栈
 
-    public void evaluate()
+    public void evaluate(AST ast) // 开始对 AST 求值
     {
 
     }
